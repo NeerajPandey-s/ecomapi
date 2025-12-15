@@ -1,19 +1,83 @@
-Introduction 
-API for Ecom Pilot
+# Ecom Pilot API
 
-Prerequisite:
-dotnet(10.x): https://dotnet.microsoft.com/en-us/download/dotnet/10.0
-entity framework: `dotnet tool install --global dotnet-ef`
-postgres(latest): https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+## Introduction
 
-How to install?
-- Make sure you have prerequisites installed.
-- Run the following commands on the root directory
-- `git pull`
--- `dotnet build`
--- Make sure there are no errors.
--- `dotnet ef migrations add [MIGRATION NAME] --project EcomApi.Api --startup-project EcomApi.Api`
--- replace [MIGRATION NAME] with a unique meaningful name for migration for example, 
-   `dotnet ef migrations add business_dto_changes --project EcomApi.Api --startup-project EcomApi.Api`
--- `dotnet ef database update [MIGRATION NAME]`
-   This will sync database with your local changes, replace [MIGRATION NAME] with unique migration name that you used in the previous command. Make sure there are no errors.
+This repository contains the **Ecom Pilot API**, a backend service built using .NET and Entity Framework with PostgreSQL as the database.
+
+---
+
+## Prerequisites
+
+Make sure the following dependencies are installed on your system:
+
+* **.NET SDK (10.x)**
+  [https://dotnet.microsoft.com/en-us/download/dotnet/10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
+
+* **Entity Framework CLI**
+
+  ```bash
+  dotnet tool install --global dotnet-ef
+  ```
+
+* **PostgreSQL (Latest Version)**
+  [https://www.enterprisedb.com/downloads/postgres-postgresql-downloads](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+
+---
+
+## Installation
+
+Follow these steps to set up the project locally:
+
+1. Ensure all prerequisites are installed correctly.
+2. Navigate to the root directory of the project.
+3. Pull the latest code:
+
+   ```bash
+   git pull
+   ```
+4. Build the solution:
+
+   ```bash
+   dotnet build
+   ```
+
+   Ensure the build completes without errors.
+
+---
+
+## Database Migration
+
+To apply database changes using Entity Framework migrations:
+
+1. Create a new migration:
+
+   ```bash
+   dotnet ef migrations add [MIGRATION_NAME] \
+     --project EcomApi.Api \
+     --startup-project EcomApi.Api
+   ```
+
+   Replace `[MIGRATION_NAME]` with a meaningful and unique name.
+
+   **Example:**
+
+   ```bash
+   dotnet ef migrations add business_dto_changes \
+     --project EcomApi.Api \
+     --startup-project EcomApi.Api
+   ```
+
+2. Update the database:
+
+   ```bash
+   dotnet ef database update [MIGRATION_NAME]
+   ```
+
+   This command synchronizes the database with your local changes. Ensure the command completes without errors.
+
+---
+
+## Notes
+
+* Always verify database connection settings before running migrations.
+* Keep migration names descriptive for easier tracking and maintenance.
