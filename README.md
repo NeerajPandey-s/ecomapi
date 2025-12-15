@@ -1,5 +1,10 @@
 # Introduction 
-Custom template for boiler plate code for a WEB API project that can be deployed as AWS Lambda.
+API for Ecom Pilot
+
+#Prerequisite:
+dotnet(10.x): https://dotnet.microsoft.com/en-us/download/dotnet/10.0
+entity framework: `dotnet tool install --global dotnet-ef`
+postgres(latest): https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 # How to install?
 1.  Pull the project from github,
